@@ -42,17 +42,29 @@
     
     #btnA {
         font-size: 20px;
-        position:absolute; top:380px; left:2%; width:43%; height:60px; 
+        position:absolute; top:380px; left:2%; width:30%; height:60px; 
+        background-color: #ffb1d100;
+        color: #ff0000;
     }
     
     #btnB {
-        font-size: 20px;
-        position:absolute; top:380px; left:45%; width:25%; height:60px; 
+        font-size: 13px;
+        position:absolute; top:380px; left:33%; width:15%; height:60px; 
+        background-color: #d4c3c3;
+        color: #fff200;
     }
 
     #btnC {
-        font-size: 10px;
-        position:absolute; top:380px; left:70%; width:28%; height:60px; 
+        font-size: 17px;
+        position:absolute; top:380px; left:49%; width:20%; height:60px; 
+        background-color: #d4c3c3;
+        color: #fff200;
+    }
+    #btnD {
+        font-size: 17px;
+        position:absolute; top:380px; left:70%; width:20%; height:60px; 
+        background-color: #d4c3c3;
+        color: #fff200;
     }
     
     #minute {
@@ -66,3 +78,6 @@
     }
     
     input[type=number] {text-align: right;}
+    body{
+        background-color: #00ff04;
+    }
