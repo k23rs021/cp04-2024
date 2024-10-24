@@ -153,7 +153,7 @@
     var active = false; var startTime = 0; var period = 0; 
     var rest = 0;
     var etime = 0;
-
+    var pausedTime = 0;
     
     // ボタンの初期設定
     function init(){
@@ -167,28 +167,28 @@
     function alarm(){
         var canvas = $("#mycanvas")[0]; 
         var ctx = canvas.getContext("2d"); 
-        var img = new Image(); 　
+        var img = new Image(); 
         img.src = "timer_time_icon2142.png";      
         img.onload = function() {     ctx.drawImage(img, 0, 0, 300, 300); }
         var audio = new Audio(); audio.src = "pin.wav";　audio.play();
         
     }
-    
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
-        active = true; 
-        startTime = new Date();
+        active = true;
+        startTime = new Date() - pausedTime * 1000;  // 一時停止時間を考慮して再開
     }
 
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
-        
+        pausedTime = etime;//経過時間を保持
     }
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
-        active = false; period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() ); $("#time").html("経過時間： 0");　$("#remain").html("残り時間： " + period);
+        active = false; period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() ); pausedTime = 0;//一時停止時間をリセット
+        $("#time").html("経過時間： 0");　$("#remain").html("残り時間： " + period);
         
     }
     
